@@ -15,7 +15,7 @@ const menuItems = [
 ];
 
 function buildMenu(items, id = null, level = 0) {
-  getSortedChildren(items, id).forEach((children, idx) => {
+  getSortedChildren(items, id).forEach((children) => {
     console.log(`${addDots(level)} ${children.name}`);
     buildMenu(items, children.id, level + 1);
   });
@@ -27,7 +27,9 @@ function addDots(level) {
 
 function getSortedChildren(submenu, id = null) {
   return submenu
-    .filter((item) => item.parentId === id)
+    .filter((item) => {
+      return item.parentId === id && item.isHidden === false;
+    })
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
