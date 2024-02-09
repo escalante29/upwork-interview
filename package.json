@@ -1,0 +1,14 @@
+{
+  "name": "interviews",
+  "version": "1.0.0",
+  "description": "JS based coding tech interviews",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Carlos Escalante",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.6.1"
+  }
+}
