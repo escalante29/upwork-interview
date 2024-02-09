@@ -18,4 +18,4 @@ const menuItems = [
 
 const result = menuBuilder(menuItems);
 
-console.log(result);
+// console.log(result);

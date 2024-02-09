@@ -1,6 +1,6 @@
-const menuBuilder = require('./menu-builder');
+const buildMenu = require('./menu-builder');
 
-test('Return the value that was sent into the function', () => {
+describe('Menu Builder', () => {
   const menuItems = [
     { id: 1, name: 'Company', parentId: null, isHidden: false },
     { id: 2, name: 'About Us', parentId: 1, isHidden: false },
@@ -16,31 +16,22 @@ test('Return the value that was sent into the function', () => {
     { id: 10, name: 'References', parentId: null, isHidden: false },
     { id: 14, name: 'Prices', parentId: null, isHidden: false },
   ];
-  const result = `. Company
-  ... About Us
-  ...... Team
-  ... Contact
-  ... Mission
-  ...... Goals
-  ......... 2021
-  . Prices
-  . References
-  ... Client 1
-  ... Client 2
-  ... Client 4
-  . Company
-  ... About Us
-  ...... Team
-  ... Contact
-  ... Mission
-  ...... Goals
-  ......... 2021
-  . Prices
-  . References
-  ... Client 1
-  ... Client 2
-  ... Client 4
-  
-  `;
-  expect(menuBuilder(menuItems)).toEqual(result);
+
+  beforeEach(() => {});
+
+  describe('log', () => {
+    test('should log each item once', () => {
+      // should log 12 out of 13 items as there's a hidden one.
+      const consoleSpy = jest.spyOn(console, 'log');
+      const totalItems = menuItems.length - 1;
+      const hidden = 1;
+
+      buildMenu(menuItems);
+
+      expect(consoleSpy).toHaveBeenCalledWith('. Company');
+      expect(consoleSpy).toHaveBeenCalledWith('...... Team');
+      expect(consoleSpy).toHaveBeenCalledWith('. Prices');
+      expect(consoleSpy).toHaveBeenCalledTimes(totalItems - hidden);
+    });
+  });
 });
