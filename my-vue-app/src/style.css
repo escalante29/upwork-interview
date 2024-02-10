@@ -1,7 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -13,6 +12,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul.menu {
+  margin: 0;
+  padding-left: 25px;
+  font-weight: bold;
+}
+
+li.submenu {
+  list-style-type: none;
+}
+
+.submenu.padding-1 {
+  padding-left: 50px;
+}
+
+.submenu.padding-2 {
+  padding-left: 75px;
+}
+.submenu.padding-3 {
+  padding-left: 100px;
+}
+
+/*
 a {
   font-weight: 500;
   color: #646cff;
@@ -76,4 +97,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
