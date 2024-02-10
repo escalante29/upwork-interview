@@ -10,8 +10,8 @@ For a given array of objects, where each of the objects represents an item from 
 4. Note that there is a field “isHidden” in each menu object, which if is set to “true”, that menu item should not be displayed (also its children should not be displayed)
 
 - Bonus:
-  - [ ] Unit tests
-  - [ ] GUI with a JS framework (Vue preferable)
+  - [x] Unit tests
+  - [x] GUI with a JS framework (Vue preferable)
 
 Example array of menu objects:
 
