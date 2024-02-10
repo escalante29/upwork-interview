@@ -1,4 +1,4 @@
-const menuBuilder = require('./menu-builder');
+const buildMenuWithStack = require('./menu-builder-stack');
 
 const menuItems = [
   { id: 1, name: 'Company', parentId: null, isHidden: false },
@@ -16,6 +16,4 @@ const menuItems = [
   { id: 14, name: 'Prices', parentId: null, isHidden: false },
 ];
 
-// const result = menuBuilder(menuItems);
-
-// console.log(result);
+buildMenuWithStack(menuItems);
